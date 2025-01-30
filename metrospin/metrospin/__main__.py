@@ -7,7 +7,7 @@ import scipy.fftpack
 def inicial(N):
     state = 2*rdm.randint(2,size=N)-1
     return state
-
+ 
 # campo aleatório gaussiano
 #def grf(N):
 def grf(N, alpha=1.0, delta=1.0, flag_normalize=True):

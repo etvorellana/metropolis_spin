@@ -1,0 +1,16 @@
+## Readme
+
+Os pacotes a serem utilizados são NUMPY, NUMBA e SCIPY para transformadas de Fourier do Campo Externo
+
+As saídas serão arquivos CSV, para cada alpha, N (número de spins). Exemplo: N =1000, alpha 1.0 ---> crlf1000-alpha1.0.csv.
+
+O arquivo clrf.py contém a simulação da rede com N = 2**10 spins, MCsteps = Eqsteps = 1000 e campo gaussiano aleatório (\sigma = 0.5) que depende do pacote scipy.fftpack. 
+
+Já o arquivo clr.py não contém o campo externo, logo, não precisa do pacote SCIPY. 
+
+MCsteps e EQsteps (passos até o equilíbrio) são equivalentes, apenas diferem o propósito em cada laço. 
+
+Precisamos modificar este script para realizar a simulação com N=1024 spins e MCsteps(EQsteps) = 1024, 2048, 3072 e 4096. 
+
+Para fazer a leitura dos arquivos CSV, o notebook dados_canonico.ipynb terá todas as funções de leitura. Basta especificar qual simulação está sendo realizada: com campo externo clrf.py 
+sem campo externo clr.py.
