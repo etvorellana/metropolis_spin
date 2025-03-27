@@ -41,7 +41,10 @@ time python clr_v2.py --spins 4096 --eqs 4000 --mcs 4000 --rseed 1234 --nTemp 12
     
     #delta = 0.1, 1.0, 10.0
 
-time python clrf_v2.py --spins 4096 --eqs 4000 --mcs 4000 --rseed 1234 --nTemp 120 --tMin 0.5 --tMax 500.0 --alpha shortT --delta 0.1
-time python clrf_v2.py --spins 4096 --eqs 4000 --mcs 4000 --rseed 1234 --nTemp 120 --tMin 0.5 --tMax 500.0 --alpha shortT --delta 1.0
-time python clrf_v2.py --spins 4096 --eqs 4000 --mcs 4000 --rseed 1234 --nTemp 120 --tMin 0.5 --tMax 500.0 --alpha shortT --delta 100.0
+time python clrf_v2.py --spins 4096 --eqs 4000 --mcs 4000 --rseed 1234 --nTemp 120 --tMin 0.5 --tMax 500.0 --alpha shortT --field zero --delta 0.1
+time python clrf_v2.py --spins 4096 --eqs 4000 --mcs 4000 --rseed 1234 --nTemp 120 --tMin 0.5 --tMax 500.0 --alpha shortT --field zero --delta 1.0
+time python clrf_v2.py --spins 4096 --eqs 4000 --mcs 4000 --rseed 1234 --nTemp 120 --tMin 0.5 --tMax 500.0 --alpha shortT --field zero --delta 100.0
 
+time python clrf_v2.py --spins 4096 --eqs 4000 --mcs 4000 --rseed 1234 --nTemp 120 --tMin 0.5 --tMax 500.0 --alpha shortT --field positive --delta 0.1
+time python clrf_v2.py --spins 4096 --eqs 4000 --mcs 4000 --rseed 1234 --nTemp 120 --tMin 0.5 --tMax 500.0 --alpha shortT --field positive --delta 1.0
+time python clrf_v2.py --spins 4096 --eqs 4000 --mcs 4000 --rseed 1234 --nTemp 120 --tMin 0.5 --tMax 500.0 --alpha shortT --field positive --delta 100.0
