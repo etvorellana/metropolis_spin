@@ -1,0 +1,36 @@
+------------------------- Detalhes das simulações
+
+Interação de longo alcance
+
+    alpha = 0.25 a 1.0, em intervalos de 0.25
+    
+    T = np.linspace(0.5, 500, nt)
+
+Interação de curto alcance
+
+    alpha = 1.25 a 2.0 em intervalos de 0.25
+    
+    T = np.linspace(0.5, 20, nt)
+    
+Campo externo aleatório positivo (com abs) e média zero (sem abs)
+    
+    delta = 0.1, 1.0, 10.0 
+    
+Sem campo 
+    
+    delta = 0.0
+ 
+Para alpha = 0 (com todas as configurações anteriores)
+
+    T = np.linspace(0.5, 2000, nt)
+    
+Número de pontos no gráfico
+
+    nt = 120
+    
+Número de spins
+    
+    N = 4096 = 2**12
+    
+    
+OBSERVAÇÃO: Testar primeiro para alpha = 0.25 e 1.25, para as quatro condições de campo, para ter certeza de que o intervalo do eixo de temperatura está de acordo.

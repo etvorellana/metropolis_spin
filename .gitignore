@@ -164,3 +164,7 @@ cython_debug/
 .DS_Store
 exemplos/.DS_Store
 notebooks/.DS_Store
+*.csv
+*.png
+*.gz
+*.zip

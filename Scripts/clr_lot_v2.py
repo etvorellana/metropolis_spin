@@ -54,6 +54,8 @@ def correlation_function(config,eqSteps):
     
 ##### Parameters #####
 
+#definindo a semente do gerador de números aleatórios
+np.random.seed(1234567890)
 nt     = 120        #  number of temperature points
 N      = 2**10     #  size of the lattice, N
 alpha = np.array([1.,1.4,1.8,2.0])        #  exponent of the long range interaction
@@ -76,8 +78,9 @@ n1, n2  = 1.0/(mcSteps*N), 1.0/(mcSteps*mcSteps*N)
 
 # Funcoes variando com a temperatura
 for j in range(len(alpha)):
-
+    print(f"alpha = {alpha[j]}")
     for tt in range(nt):
+        #print(f"mcSteps = {mcSteps} start")
         E1 = M1 = E2 = M2 = 0
         config = inicial(N)
         iT=1/T[tt]; iT2=iT*iT; # Termos referentes à temperatura => beta = 1/kT, k=1 é a constante de Boltzmann
@@ -98,9 +101,11 @@ for j in range(len(alpha)):
         M_1[j][tt] = M1*n1
         C_1[j][tt] = (E2*n1 - E1*E1*n2)*iT2
         X_1[j][tt] = (M2*n1 - M1*M1*n2)*iT
+        #print(f"mcSteps = {mcSteps} stop")
         #Considero que já fiz 2000 passos de Monte Carlo
         #E1 = M1 = E2 = M2 = 0
         mcSteps = 2000 # para recalcular n1, n2
+        #print(f"mcSteps = {mcSteps} start")
         n1, n2  = 1.0/(mcSteps*N), 1.0/(mcSteps*mcSteps*N)
         mcSteps = 1000 #Mais 1000 passos de Monte Carlo
         for i in range(mcSteps):
@@ -117,9 +122,12 @@ for j in range(len(alpha)):
         M_2[j][tt] = M1*n1
         C_2[j][tt] = (E2*n1 - E1*E1*n2)*iT2
         X_2[j][tt] = (M2*n1 - M1*M1*n2)*iT
+        mcSteps = 2000
+        #print(f"mcSteps = {mcSteps} stop")
         #Considero que já fiz 4000 passos de Monte Carlo 
         #E1 = M1 = E2 = M2 = 0
         mcSteps = 4000 # para recalcular n1, n2
+        #print(f"mcSteps = {mcSteps} start")        
         n1, n2  = 1.0/(mcSteps*N), 1.0/(mcSteps*mcSteps*N)
         mcSteps = 2000 # mais 2000 passos de Monte Carlo
         for i in range(mcSteps):
@@ -136,6 +144,8 @@ for j in range(len(alpha)):
         M_4[j][tt] = M1*n1
         C_4[j][tt] = (E2*n1 - E1*E1*n2)*iT2
         X_4[j][tt] = (M2*n1 - M1*M1*n2)*iT
+        mcSteps = 4000
+        #print(f"mcSteps = {mcSteps} stop")
         
 
     ##### Output (.csv) #####
