@@ -15,7 +15,7 @@ def inicial(N):
 
 # Gaussian random field
 @jit(forceobj=True)
-def grf(N, delta, r = 0.001, flag_normalize = True, type_field = 'zero'):
+def grf(N, delta, r = 0.001, flag_normalize = True, type_field = 0):
 
     k_idx = np.mgrid[:N] - (N + 1)//2
     k_idx = scipy.fftpack.fftshift(k_idx)
@@ -32,7 +32,7 @@ def grf(N, delta, r = 0.001, flag_normalize = True, type_field = 'zero'):
         gfield = gfield - np.mean(gfield)
         gfield = delta*gfield/np.std(gfield)
 
-    if type_field == 'zero':
+    if type_field == 0:
         return gfield     # campo aleatório com média zero
     else:
         return abs(gfield)  # campo aleatório com média positiva
@@ -96,7 +96,7 @@ def args_input():
     p.add_argument('--tMin', type=float, default=0.5)
     p.add_argument('--tMax', type=float, default=20.0)
     p.add_argument('--alpha', type=str, default='short') # short, long, shortT, longT
-    p.add_argument('--field', type=str, default='zero') # zero, positive
+    p.add_argument('--field', type=int, default=0) # zero, positive
     p.add_argument('--delta', type=float, default=0.5)
 
     return p.parse_args()
@@ -147,6 +147,7 @@ def main():
             iT=1/T[tt]; iT2=iT**2; # Termos referentes à temperatura => beta = 1/kT, k=1 é a constante de Boltzmann
 
             for i in range(eqSteps):         # equilibrate
+                #spin_flip(N,beta,config,alpha,delta, type_field)
                 spin_flip(N,iT,config,alpha[j],delta, type_field)         # Monte Carlo moves
 
             for i in range(mcSteps):
