@@ -169,7 +169,7 @@ def main():
         ##### Output (.csv) #####
 
         data = {"energy": E, "magnetization": M, "specific_heat": C, "susceptibility": X, "temperature": T}
-        with open("clrf{}-alpha{}-{}-{}-{}.csv".format(N,alpha[j],eqSteps,mcSteps,type_field), "w") as f:
+        with open("clrf{}-alpha{}-{}-{}-{}-{}.csv".format(N,alpha[j],eqSteps,mcSteps,type_field,delta), "w") as f:
             f.write("energy,magnetization,specific_heat,susceptibility,temperature\n")
             for i in range(nt):
                 f.write("{},{},{},{},{}\n".format(data["energy"][j][i],data["magnetization"][j][i],

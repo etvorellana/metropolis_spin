@@ -24,7 +24,7 @@
 #    p.add_argument('--tMax', type=float, default=20.0)
 #    p.add_argument('--alpha', type=str, default='short') # short, long, shortT, longT 
 
-time python clr_v2.py --spins 4096 --eqs 4000 --mcs 4000 --rseed 1234 --nTemp 120 --tMin 0.5 --tMax 500.0 --alpha shortT
+time python clr_v2.py --spins 4096 --eqs 4000 --mcs 4000 --rseed 1234 --nTemp 120 --tMin 0.5 --tMax 500.0 --alpha longT
 
 #   p.add_argument('--spins', type=int, default=1024)
 #   p.add_argument('--eqs', type=int, default=1000)
@@ -41,10 +41,10 @@ time python clr_v2.py --spins 4096 --eqs 4000 --mcs 4000 --rseed 1234 --nTemp 12
     
     #delta = 0.1, 1.0, 10.0
 
-time python clrf_v2.py --spins 4096 --eqs 4000 --mcs 4000 --rseed 1234 --nTemp 120 --tMin 0.5 --tMax 500.0 --alpha shortT --field 0 --delta 0.1
-time python clrf_v2.py --spins 4096 --eqs 4000 --mcs 4000 --rseed 1234 --nTemp 120 --tMin 0.5 --tMax 500.0 --alpha shortT --field 0 --delta 1.0
-time python clrf_v2.py --spins 4096 --eqs 4000 --mcs 4000 --rseed 1234 --nTemp 120 --tMin 0.5 --tMax 500.0 --alpha shortT --field 0 --delta 100.0
+time python clrf_v2.py --spins 4096 --eqs 4000 --mcs 4000 --rseed 1234 --nTemp 120 --tMin 0.5 --tMax 500.0 --alpha longT --field 0 --delta 0.1
+time python clrf_v2.py --spins 4096 --eqs 4000 --mcs 4000 --rseed 1234 --nTemp 120 --tMin 0.5 --tMax 500.0 --alpha longT --field 0 --delta 1.0
+time python clrf_v2.py --spins 4096 --eqs 4000 --mcs 4000 --rseed 1234 --nTemp 120 --tMin 0.5 --tMax 500.0 --alpha longT --field 0 --delta 100.0
 
-time python clrf_v2.py --spins 4096 --eqs 4000 --mcs 4000 --rseed 1234 --nTemp 120 --tMin 0.5 --tMax 500.0 --alpha shortT --field 1 --delta 0.1
-time python clrf_v2.py --spins 4096 --eqs 4000 --mcs 4000 --rseed 1234 --nTemp 120 --tMin 0.5 --tMax 500.0 --alpha shortT --field 1 --delta 1.0
-time python clrf_v2.py --spins 4096 --eqs 4000 --mcs 4000 --rseed 1234 --nTemp 120 --tMin 0.5 --tMax 500.0 --alpha shortT --field 1 --delta 100.0
+time python clrf_v2.py --spins 4096 --eqs 4000 --mcs 4000 --rseed 1234 --nTemp 120 --tMin 0.5 --tMax 500.0 --alpha longT --field 1 --delta 0.1
+time python clrf_v2.py --spins 4096 --eqs 4000 --mcs 4000 --rseed 1234 --nTemp 120 --tMin 0.5 --tMax 500.0 --alpha longT --field 1 --delta 1.0
+time python clrf_v2.py --spins 4096 --eqs 4000 --mcs 4000 --rseed 1234 --nTemp 120 --tMin 0.5 --tMax 500.0 --alpha longT --field 1 --delta 100.0
