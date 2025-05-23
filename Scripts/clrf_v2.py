@@ -107,8 +107,8 @@ def main():
 
     nt     = args.nTemp                 #  number of temperature points
     N      = args.spins                 #  size of the lattice, N
-    alphaS = np.array([0.25,0.50,0.75,1.00])    #  exponent of the long range interaction
-    alphaL = np.array([1.25,1.50,1.75,2.00])    #  exponent of the short range interaction
+    alphaL = np.array([0.25,0.50,0.75,1.00])    #  exponent of the long range interaction
+    alphaS = np.array([1.25,1.50,1.75,2.00])    #  exponent of the short range interaction
     if args.alpha == 'short':
         alpha = alphaS
     elif args.alpha == 'long':
