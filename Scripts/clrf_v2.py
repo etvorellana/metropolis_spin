@@ -35,7 +35,7 @@ def grf(N, delta, r = 0.001, flag_normalize = True, type_field = 0):
     if type_field == 0:
         return gfield     # campo aleatório com média zero
     else:
-        return abs(gfield)  # campo aleatório com média positiva
+        return np.abs(gfield)  # campo aleatório com média positiva
 
 # Spin flip
 @jit(forceobj=True)
