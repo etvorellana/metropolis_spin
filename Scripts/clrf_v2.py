@@ -95,7 +95,7 @@ def args_input():
     p.add_argument('--nTemp', type=int, default=120)
     p.add_argument('--tMin', type=float, default=0.5)
     p.add_argument('--tMax', type=float, default=20.0)
-    p.add_argument('--alpha', type=str, default='short') # short, long, shortT, longT
+    p.add_argument('--alpha', type=str, default='short') # short, long, shortT, longT, zero
     p.add_argument('--field', type=int, default=0) # zero, positive
     p.add_argument('--delta', type=float, default=0.5)
 
@@ -115,8 +115,10 @@ def main():
         alpha = alphaL
     elif args.alpha == 'longT':
         alpha = np.array([0.25])
-    else:
+    elif args.alpha == 'shortT':
         alpha = np.array([1.25])
+    else:
+        alpha = np.array([0.0])
     eqSteps = args.eqs                  #  number of MC sweeps for equilibration
     mcSteps = args.mcs                  #  number of MC sweeps for calculation
     delta = args.delta                  #  external field
